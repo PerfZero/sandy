@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой кабинет - Sandi</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Каталог</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Связаться с нами</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__button header__button--login">Войти</button>
+                <button class="header__button header__button--cart"><img src="/assets/img/cart.svg" alt=""></button>
+            </div>
+        </div>
+    </header>
+    
+    <main class="account">
+        <div class="account__container">
+            <div class="account__header">
+                <h1 class="account__title">Мой кабинет</h1>
+                <div class="account__actions">
+                    <a href="#" class="account__action">
+                        Редактировать профиль
+                        <img src="assets/img/edit-icon.svg" alt="Редактировать" class="account__action-icon">
+
+                    </a>
+                    <a href="#" class="account__action">
+                        Выйти
+                        <img src="assets/img/logout-icon.svg" alt="Выйти" class="account__action-icon">
+
+                    </a>
+                </div>
+            </div>
+            
+            <div class="account__profile">
+                <div class="account__field">
+                    <input type="text" value="Виктор" class="account__input" readonly>
+                </div>
+                <div class="account__field">
+                    <input type="text" value="+ 123 456 789 00 12" class="account__input" readonly>
+                </div>
+                <div class="account__field">
+                    <input type="text" value="Макаронс" class="account__input" readonly>
+                </div>
+                <div class="account__field">
+                    <input type="text" value="Астана. Проспект Улы Дала 45/1" class="account__input account__input--address" readonly>
+                    <img src="assets/img/location-icon.svg" alt="Адрес" class="account__location-icon">
+                </div>
+            </div>
+            
+            <section class="last-order">
+                <h2 class="last-order__title">Последний заказ</h2>
+                <div class="last-order__card">
+                    <div class="last_order">
+                    <div class="last-order__info">
+                        <div class="last-order__status">✓ Заказ выполнен</div>
+                        <div class="last-order__customer">% Постоянный клиент</div>
+                        <div class="last-order__date">21.03.2025, 13:50</div>
+                    </div>
+                    <div class="last-order__products">
+                        <div class="last-order__product-item">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс" class="last-order__product">
+                            <span class="last-order__product-name">Макаронс Фисташка-Малина</span>
+                        </div>
+                        <div class="last-order__product-item">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс" class="last-order__product">
+                            <span class="last-order__product-name">Макаронс Фисташка-Малина</span>
+                        </div>
+                        <div class="last-order__product-item">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс" class="last-order__product">
+                            <span class="last-order__product-name">Макаронс Фисташка-Малина</span>
+                        </div>
+                    </div>
+                    <div class="last-order__summary">
+                        <div class="last-order__price">
+                        <div class="last-order__total">12 400 KZT</div>
+                        <div class="last-order__count">12 товаров</div>
+                        </div>
+                        <button class="last-order__button">Повторить заказ</button>
+                    </div>
+                </div>
+                <a href="#" class="last-order__link">Посмотреть полный список покупок →</a>
+                </div>
+            </section>
+            
+            <section class="order-history">
+                <h2 class="order-history__title">История заказов</h2>
+                <div class="order-history__cards">
+                    <div class="order-history__card">
+                        <div class="order-history__content">
+                            <div class="order-history__left">
+                                <div class="order-history__status">✓ Заказ выполнен</div>
+                                <div class="order-history__customer">% Постоянный клиент</div>
+                                <div class="order-history__date">21.03.2025, 13:50</div>
+                            </div>
+                            <div class="order-history__right">
+                                <div class="order-history__total">12 400 KZT</div>
+                                <div class="order-history__count">12 товаров</div>
+                                <button class="order-history__button">Повторить заказ</button>
+                            </div>
+                        </div>
+                        <div class="order-history__bottom">
+                            <a href="#" class="order-history__link">Посмотреть полный список покупок →</a>
+                        </div>
+                    </div>
+                    <div class="order-history__card">
+                        <div class="order-history__content">
+                            <div class="order-history__left">
+                                <div class="order-history__status">✓ Заказ выполнен</div>
+                                <div class="order-history__customer">% Постоянный клиент</div>
+                                <div class="order-history__date">21.03.2025, 13:50</div>
+                            </div>
+                            <div class="order-history__right">
+                                <div class="order-history__total">12 400 KZT</div>
+                                <div class="order-history__count">12 товаров</div>
+                                <button class="order-history__button">Повторить заказ</button>
+                            </div>
+                        </div>
+                        <div class="order-history__bottom">
+                            <a href="#" class="order-history__link">Посмотреть полный список покупок →</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="order-history__expand">Развернуть всю историю заказов...</a>
+            </section>
+            
+            <section class="coupons">
+                <h2 class="coupons__title">Доступные купоны</h2>
+                <div class="coupons__grid">
+                    <div class="coupons__card">
+                        <h3 class="coupons__card-title">Постоянный покупатель</h3>
+                        <div class="coupons__discount">Скидка -10% на весь чек</div>
+                        <div class="coupons__validity">Действителен: бесконечно</div>
+                        <button class="coupons__button coupons__button--active">Активен</button>
+                    </div>
+                    <div class="coupons__card">
+                        <h3 class="coupons__card-title">Оптовые цены</h3>
+                        <div class="coupons__discount">Скидка -30% на весь чек</div>
+                        <div class="coupons__validity">Действителен: от 30 товаров</div>
+                        <button class="coupons__button">Активировать</button>
+                    </div>
+                    <div class="coupons__card">
+                        <h3 class="coupons__card-title">День рождение</h3>
+                        <div class="coupons__discount">Скидка -15% на весь чек</div>
+                        <div class="coupons__validity">Действителен: единоразово</div>
+                        <button class="coupons__button">Активировать</button>
+                    </div>
+                    <div class="coupons__card">
+                        <h3 class="coupons__card-title">Постоянный оптовик</h3>
+                        <div class="coupons__discount">Скидка -40% на весь чек</div>
+                        <div class="coupons__validity">Действителен: от 50 боксов с макаронсами</div>
+                        <button class="coupons__button">Активировать</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <img src="assets/img/footer_logo.svg" alt="Логотип" class="footer__logo-img">
+                    </div>
+                    <div class="footer__schedule">
+                        <p class="footer__schedule-text">График работы:</p>
+                        <p class="footer__schedule-time">Пн - Пт, с 10:00 до 22:00</p>
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__address">
+                        <p class="footer__address-text">Астана. Проспект Улы Дала 45/1</p>
+                    </div>
+                    <div class="footer__languages">
+                        <span class="footer__lang">RU</span>
+                        <span class="footer__separator">|</span>
+                        <span class="footer__lang">KZ</span>
+                        <span class="footer__separator">|</span>
+                        <span class="footer__lang">EN</span>
+                    </div>
+                    <div class="footer__copyright">
+                        <p class="footer__copyright-text">© 2025 Sandi. Все права защищены</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
