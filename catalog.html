@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Sandi</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Каталог</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Связаться с нами</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="header__button header__button--login">Войти</button>
+                <button class="header__button header__button--cart"><img src="/assets/img/cart.svg" alt=""></button>
+            </div>
+        </div>
+    </header>
+    
+    <section class="catalog__banner">
+        <div class="catalog__banner-container">
+            <div class="catalog__banner-content">
+                <div class="catalog__banner-text">
+                    <h2 class="catalog__banner-title">Подари близкому настроение на весь день</h2>
+                    <p class="catalog__banner-description">Вы можете заказать десерты в красивой подарочной упаковке</p>
+                    <button class="catalog__banner-button">Посмотреть боксы</button>
+                </div>
+                <div class="catalog__banner-image">
+                    <img src="assets/img/gift-box.png" alt="Подарочная коробка" class="catalog__banner-img">
+                </div>
+                <div class="catalog__banner-pagination">
+                    <span class="catalog__banner-dot catalog__banner-dot--active"></span>
+                    <span class="catalog__banner-dot"></span>
+                    <span class="catalog__banner-dot"></span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <main class="catalog">
+        <div class="catalog__container">
+            <div class="catalog__content">
+                <aside class="catalog__sidebar">
+                    <div class="catalog__logo">
+                        <h1 class="catalog__logo-text"><img src="/assets/img/footer_logo.svg" alt=""></h1>
+                    </div>
+                    <nav class="catalog__categories">
+                        <ul class="catalog__category-list">
+                            <li class="catalog__category-item catalog__category-item--active">
+                                Macarons
+                                <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 6.86667L6 12L16 1" stroke="#EBE3D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                            </li>
+                            <li class="catalog__category-item">
+                                Финики
+                            </li>
+                            <li class="catalog__category-item catalog__category-item--active">
+                                Печенье
+                                <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 6.86667L6 12L16 1" stroke="#EBE3D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                            </li>
+                            <li class="catalog__category-item">
+                                Клубника
+                            </li>
+                            <li class="catalog__category-item">
+                                Боксы
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                
+                <div class="catalog__main">
+                    <div class="catalog__filters">
+                        <button class="catalog__filter">Рожок</button>
+                        <button class="catalog__filter catalog__filter--active">Новинки</button>
+                        <button class="catalog__filter">Халяль</button>
+                        <button class="catalog__filter">Ваниль</button>
+                        <button class="catalog__filter">Сливочный</button>
+                        <button class="catalog__filter catalog__filter--active">Поштучно</button>
+                    </div>
+                    
+                    <div class="catalog__products">
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--popular">Популярное</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                            <div class="catalog__product-price">20 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Ваниль</h3>
+                            <div class="catalog__product-price">18 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--hit">Хит</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Шоколад</h3>
+                            <div class="catalog__product-price">22 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--out">Нет в наличии</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Клубника</h3>
+                            <div class="catalog__product-price">19 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn catalog__add-btn--disabled" disabled>В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--popular">Популярное</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Лимон</h3>
+                            <div class="catalog__product-price">17 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Карамель</h3>
+                            <div class="catalog__product-price">21 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--hit">Хит</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Малина</h3>
+                            <div class="catalog__product-price">20 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn">В корзину</button>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog__product">
+                            <div class="catalog__product-badge catalog__product-badge--out">Нет в наличии</div>
+                            <button class="catalog__product-search">
+                                <img src="assets/img/search-icon.svg" alt="Поиск">
+                            </button>
+                            <div class="catalog__product-image">
+                                <img src="assets/img/macaron-1.png" alt="Макаронс">
+                            </div>
+                            <h3 class="catalog__product-name">Макаронс Кокос</h3>
+                            <div class="catalog__product-price">18 000 KZT</div>
+                            <div class="catalog__product-controls">
+                                <div class="catalog__quantity">
+                                    <button class="catalog__quantity-btn">-</button>
+                                    <span>99</span>
+                                    <button class="catalog__quantity-btn">+</button>
+                                </div>
+                                <button class="catalog__add-btn catalog__add-btn--disabled" disabled>В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Блок оптовых заказов -->
+    <section class="wholesale">
+        <div class="wholesale__container">
+            <div class="wholesale__content">
+                <div class="wholesale__image">
+                    <img src="assets/img/wholesale-box.png" alt="Продукция Sandi оптом">
+                </div>
+                <div class="wholesale__text">
+                    <h2 class="wholesale__title">Заказать продукцию Sandi оптом</h2>
+                    <p class="wholesale__description">Вы можете заказать нашу продукцию оптом для большой компании или личного бизнеса</p>
+                    <button class="wholesale__button">Связаться с нами</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <img src="assets/img/footer_logo.svg" alt="Логотип" class="footer__logo-img">
+                    </div>
+                    <div class="footer__schedule">
+                        <p class="footer__schedule-text">График работы:</p>
+                        <p class="footer__schedule-time">Пн - Пт, с 10:00 до 22:00</p>
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__address">
+                        <p class="footer__address-text">Астана. Проспект Улы Дала 45/1</p>
+                    </div>
+                    <div class="footer__languages">
+                        <span class="footer__lang">RU</span>
+                        <span class="footer__separator">|</span>
+                        <span class="footer__lang">KZ</span>
+                        <span class="footer__separator">|</span>
+                        <span class="footer__lang">EN</span>
+                    </div>
+                    <div class="footer__copyright">
+                        <p class="footer__copyright-text">© 2025 Sandi. Все права защищены</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Простая функциональность слайдера
+        const dots = document.querySelectorAll('.catalog__banner-dot');
+        const bannerContent = document.querySelector('.catalog__banner-content');
+        
+        // Данные для слайдов
+        const slides = [
+            {
+                title: "Подари близкому настроение на весь день",
+                description: "Вы можете заказать десерты в красивой подарочной упаковке",
+                button: "Посмотреть боксы",
+                image: "assets/img/gift-box.png"
+            },
+            {
+                title: "Свежие десерты каждый день",
+                description: "Мы готовим макаронс из натуральных ингредиентов",
+                button: "Заказать сейчас",
+                image: "assets/img/gift-box.png"
+            },
+            {
+                title: "Доставка по всему городу",
+                description: "Быстрая доставка свежих десертов к вашему столу",
+                button: "Узнать больше",
+                image: "assets/img/gift-box.png"
+            }
+        ];
+        
+        let currentSlide = 0;
+        
+        function updateSlide(index) {
+            const slide = slides[index];
+            const title = document.querySelector('.catalog__banner-title');
+            const description = document.querySelector('.catalog__banner-description');
+            const button = document.querySelector('.catalog__banner-button');
+            const image = document.querySelector('.catalog__banner-img');
+            
+            title.textContent = slide.title;
+            description.textContent = slide.description;
+            button.textContent = slide.button;
+            image.src = slide.image;
+            
+            // Обновляем активную точку
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('catalog__banner-dot--active', i === index);
+            });
+        }
+        
+        // Добавляем обработчики кликов на точки
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlide(currentSlide);
+            });
+        });
+        
+        // Автоматическое переключение слайдов каждые 5 секунд
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        }, 5000);
+    </script>
+</body>
+</html>
