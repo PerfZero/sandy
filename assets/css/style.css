@@ -3791,10 +3791,18 @@ height: 64px;
     grid-template-columns: 1fr;
   }
 
-  .account__input{
+  .account__input , .account__dropdown{
     font-size: 16px;
     padding: 12px;
     width: 100%;
+  }
+
+  .account__dropdown-selected{
+    font-size: 16px;
+  }
+
+  .account__dropdown-option{
+    font-size: 16px;
   }
 
   .last_order{
