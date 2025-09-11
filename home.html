@@ -237,76 +237,84 @@
         </div>
     </div>
 
-    <script>
-        // Функции для работы с модальными окнами авторизации
-        function showAuthPopup(popupId) {
-            console.log('Открываем попап:', popupId);
-            // Закрываем все попапы
-            document.querySelectorAll('.auth-popup').forEach(popup => {
-                popup.classList.remove('auth-popup--active');
-            });
-            // Открываем нужный попап
-            const popup = document.getElementById(popupId);
-            if (popup) {
-                popup.classList.add('auth-popup--active');
-                console.log('Попап открыт');
-            } else {
-                console.error('Попап не найден:', popupId);
-            }
-        }
+    <!-- Попап корзины -->
+    <div class="filling-popup" id="cartPopup">
+        <div class="filling-popup__overlay"></div>
+        <div class="filling-popup__content">
+            <div class="filling-popup__header">
+                <h2 class="filling-popup__title">Корзина</h2>
+                <button class="filling-popup__close" id="closeCartPopup">×</button>
+            </div>
+            
+            <div class="filling-popup__controls">
+                <label class="filling-popup__select-all">
+                    <input type="checkbox" id="selectAllCart">
+                    <span>Выбрать все</span>
+                </label>
+                <button class="filling-popup__clear"><img src="/assets/img/carts.svg" alt=""></button>
+            </div>
 
-        function closeAuthPopup(popupId) {
-            document.getElementById(popupId).classList.remove('auth-popup--active');
-        }
+            <div class="filling-popup__items" id="cartItems">
+                <!-- Товары будут добавляться динамически -->
+            </div>
 
-        function showCodePopup(type) {
-            if (type === 'register') {
-                closeAuthPopup('registerPopup');
-                showAuthPopup('registerCodePopup');
-            } else if (type === 'login') {
-                closeAuthPopup('loginPopup');
-                showAuthPopup('loginCodePopup');
-            }
-        }
+            <div class="filling-popup__footer">
+                <div class="filling-popup__total">
+                    <span class="filling-popup__total-price">0 KZT</span>
+                </div>
+                <button class="filling-popup__save-btn">Оформить заказ</button>
+            </div>
 
-        function confirmCode(type) {
-            if (type === 'error') {
-                // Показываем попап с ошибкой
-                closeAuthPopup('loginCodePopup');
-                showAuthPopup('errorCodePopup');
-            } else {
-                // Успешная авторизация - закрываем все попапы
-                document.querySelectorAll('.auth-popup').forEach(popup => {
-                    popup.classList.remove('auth-popup--active');
-                });
-                // Здесь можно добавить логику успешной авторизации
-                alert('Успешная авторизация!');
-            }
-        }
+            <div class="filling-popup__recommended">
+                <h3 class="filling-popup__recommended-title">Рекомендуем попробовать</h3>
+                <div class="catalog__products">
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        // Обработчик для кнопки "Войти" в хедере
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM загружен');
-            const loginButtons = document.querySelectorAll('.header__button--login, .mobile-menu__button--login');
-            console.log('Найдено кнопок входа:', loginButtons.length);
-            loginButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Клик по кнопке входа');
-                    showAuthPopup('loginPopup');
-                });
-            });
-        });
-
-        // Закрытие попапа при клике на фон
-        document.addEventListener('DOMContentLoaded', function() {
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('auth-popup')) {
-                    e.target.classList.remove('auth-popup--active');
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/home.js"></script>
 </body>
 </html>
 

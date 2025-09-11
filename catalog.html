@@ -406,6 +406,38 @@
         </div>
     </div>
     
+    <!-- Попап корзины -->
+    <div class="filling-popup" id="cartPopup">
+        <div class="filling-popup__overlay"></div>
+        <div class="filling-popup__content">
+            <div class="filling-popup__header">
+                <h2 class="filling-popup__title">Корзина</h2>
+                <button class="filling-popup__close" id="closeCartPopup">×</button>
+            </div>
+            
+            <div class="filling-popup__controls">
+                <label class="filling-popup__select-all">
+                    <input type="checkbox" id="selectAllCart">
+                    <span>Выбрать все</span>
+                </label>
+                <button class="filling-popup__clear"><img src="/assets/img/carts.svg" alt=""></button>
+            </div>
+
+            <div class="filling-popup__items" id="cartItems">
+                <!-- Товары будут добавляться динамически -->
+            </div>
+
+            <div class="filling-popup__footer">
+                <div class="filling-popup__total">
+                    <span class="filling-popup__total-price">0 KZT</span>
+                </div>
+                <button class="filling-popup__save-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/catalog.js"></script>
 </body>
 </html>

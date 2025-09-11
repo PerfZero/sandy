@@ -87,6 +87,19 @@
             border-radius: 8px;
             font-family: "Calibri", sans-serif;
         }
+
+        @media screen and (max-width: 768px) {
+            .navigation__grid {
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+
+            }
+
+            .navigation__link {
+                font-size: 14px;
+            }
+        }
      
     </style>
 </head>
@@ -122,5 +135,6 @@
             </div>
         </div>
     </div>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>
