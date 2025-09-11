@@ -6,42 +6,87 @@
     <title>Крамбл Кукис Шоколадный - Sandi</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <header class="header">
         <div class="header__container">
+            <button class="header__burger" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav class="header__nav">
                 <ul class="header__menu">
-                    <li class="header__item">
-                        <a href="home.html" class="header__link">Главная</a>
-                    </li>
                     <li class="header__item">
                         <a href="#" class="header__link">О компании</a>
                     </li>
                     <li class="header__item">
-                        <a href="catalog.html" class="header__link">Каталог</a>
+                        <a href="#" class="header__link">Каталог</a>
                     </li>
                     <li class="header__item">
                         <a href="#" class="header__link">Связаться с нами</a>
                     </li>
                 </ul>
             </nav>
+            
             <div class="header__actions">
                 <button class="header__button header__button--login">Войти</button>
-                <button class="header__button header__button--cart">Корзина</button>
+                <button class="header__button header__button--cart">
+                    <img src="/assets/img/cart.svg" alt="">
+                    <span class="header__cart-count" id="cartCount">3</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__content">
+                <button class="mobile-menu__close" id="mobileMenuClose">×</button>
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">О компании</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Каталог</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Связаться с нами</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__actions">
+                    <button class="mobile-menu__button mobile-menu__button--login">Войти</button>
+                    <button class="mobile-menu__button mobile-menu__button--cart">
+                        Корзина
+                        <span class="mobile-menu__cart-count" id="mobileCartCount">3</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
+    
 
     <main class="product">
         <div class="product__container">
             <div class="product__content">
                 <div class="product__image">
-                    <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
-                    <div class="product__pagination">
-                        <div class="product__dot product__dot--active"></div>
-                        <div class="product__dot"></div>
-                        <div class="product__dot"></div>
+                    <div class="swiper product__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                     <div class="product__price">20 000 KZT/шт.</div>
                 </div>
@@ -106,5 +151,20 @@
             </div>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.product__swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </body>
 </html>

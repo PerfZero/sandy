@@ -10,6 +10,12 @@
 <body>
     <header class="header">
         <div class="header__container">
+            <button class="header__burger" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__item">
@@ -23,9 +29,41 @@
                     </li>
                 </ul>
             </nav>
+            
             <div class="header__actions">
                 <button class="header__button header__button--login">Войти</button>
-                <button class="header__button header__button--cart"><img src="/assets/img/cart.svg" alt=""></button>
+                <button class="header__button header__button--cart">
+                    <img src="/assets/img/cart.svg" alt="">
+                    <span class="header__cart-count" id="cartCount">3</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__content">
+                <button class="mobile-menu__close" id="mobileMenuClose">×</button>
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">О компании</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Каталог</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Связаться с нами</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__actions">
+                    <button class="mobile-menu__button mobile-menu__button--login">Войти</button>
+                    <button class="mobile-menu__button mobile-menu__button--cart">
+                        Корзина
+                        <span class="mobile-menu__cart-count" id="mobileCartCount">3</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -86,6 +124,18 @@
                 </aside>
                 
                 <div class="catalog__main">
+                    <!-- Мобильные кнопки -->
+                    <div class="catalog__filters-mobile">
+                        <button class="catalog__filter-open-btn" onclick="openPopup('filters-popup')">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.07422 16.9248L9.13379 16.9141L12.877 16.2295H12.9248V13.7803H9.07422V16.9248ZM7.31348 9.50684L8.88184 12.2432L9.05469 12.543L9.06836 12.5674H12.9268L12.9414 12.543L13.1133 12.2432L14.6846 9.50684L14.7275 9.43262H7.27051L7.31348 9.50684ZM4.81738 5.15918L6.56055 8.19434L6.5752 8.21973H15.4229L15.4365 8.19434L17.1797 5.15918L17.2236 5.08496H4.77441L4.81738 5.15918ZM7.70605 12.9434L7.69922 12.9316L2.92969 4.61816V4.61719L2.8916 4.54102C2.73286 4.15266 3.01557 3.70801 3.4502 3.70801H18.5479C19.0113 3.7081 19.3017 4.21425 19.0703 4.61816L14.2979 12.9316L14.292 12.9434V17C14.292 17.3357 14.0225 17.6064 13.6895 17.6064V17.6055L13.6836 17.6064L8.30469 18.291C7.97328 18.2891 7.70605 18.0201 7.70605 17.6855V12.9434Z" fill="#7E5C45" stroke="#FFFAF4" stroke-width="0.1" />
+                              </svg>
+                            Фильтры
+                        </button>
+                        <button class="catalog__sort-open-btn" onclick="openPopup('categories-popup')">Сортировать по типу</button>
+                    </div>
+                    
+                    <!-- Десктопные фильтры -->
                     <div class="catalog__filters">
                         <button class="catalog__filter">Рожок</button>
                         <button class="catalog__filter catalog__filter--active">Новинки</button>
@@ -308,66 +358,54 @@
         </div>
     </footer>
     
-    <script>
-        // Простая функциональность слайдера
-        const dots = document.querySelectorAll('.catalog__banner-dot');
-        const bannerContent = document.querySelector('.catalog__banner-content');
-        
-        // Данные для слайдов
-        const slides = [
-            {
-                title: "Подари близкому настроение на весь день",
-                description: "Вы можете заказать десерты в красивой подарочной упаковке",
-                button: "Посмотреть боксы",
-                image: "assets/img/gift-box.png"
-            },
-            {
-                title: "Свежие десерты каждый день",
-                description: "Мы готовим макаронс из натуральных ингредиентов",
-                button: "Заказать сейчас",
-                image: "assets/img/gift-box.png"
-            },
-            {
-                title: "Доставка по всему городу",
-                description: "Быстрая доставка свежих десертов к вашему столу",
-                button: "Узнать больше",
-                image: "assets/img/gift-box.png"
-            }
-        ];
-        
-        let currentSlide = 0;
-        
-        function updateSlide(index) {
-            const slide = slides[index];
-            const title = document.querySelector('.catalog__banner-title');
-            const description = document.querySelector('.catalog__banner-description');
-            const button = document.querySelector('.catalog__banner-button');
-            const image = document.querySelector('.catalog__banner-img');
-            
-            title.textContent = slide.title;
-            description.textContent = slide.description;
-            button.textContent = slide.button;
-            image.src = slide.image;
-            
-            // Обновляем активную точку
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('catalog__banner-dot--active', i === index);
-            });
-        }
-        
-        // Добавляем обработчики кликов на точки
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateSlide(currentSlide);
-            });
-        });
-        
-        // Автоматическое переключение слайдов каждые 5 секунд
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlide(currentSlide);
-        }, 5000);
-    </script>
+    <!-- Попапы для мобильной версии -->
+    <!-- Попап фильтров -->
+    <div class="catalog__popup" id="filters-popup">
+        <div class="catalog__popup-content">
+            <div class="catalog__popup-header">
+                <div class="catalog__popup-logo"><img src="/assets/img/footer_logo.svg" alt=""></div>
+                <button class="catalog__popup-close" onclick="closePopup('filters-popup')">×</button>
+            </div>
+            <div class="catalog__popup-filters">
+                <button class="catalog__popup-filter">Рожок</button>
+                <button class="catalog__popup-filter catalog__popup-filter--active">Новинки</button>
+                <button class="catalog__popup-filter">Халяль</button>
+                <button class="catalog__popup-filter">Ваниль</button>
+                <button class="catalog__popup-filter">Сливочный</button>
+                <button class="catalog__popup-filter catalog__popup-filter--active">Поштучно</button>
+            </div>
+            <button class="catalog__popup-confirm" onclick="closePopup('filters-popup')">Подтвердить</button>
+        </div>
+    </div>
+    
+    <!-- Попап категорий -->
+    <div class="catalog__popup" id="categories-popup">
+        <div class="catalog__popup-content">
+            <div class="catalog__popup-header">
+                <div class="catalog__popup-logo"><img src="/assets/img/footer_logo.svg" alt=""></div>
+                <button class="catalog__popup-close" onclick="closePopup('categories-popup')">×</button>
+            </div>
+            <div class="catalog__popup-categories">
+                <button class="catalog__popup-category catalog__popup-category--active">
+                    Macarons
+                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.86667L6 12L16 1" stroke="#EBE3D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                </button>
+                <button class="catalog__popup-category">Финики</button>
+                <button class="catalog__popup-category catalog__popup-category--active">
+                    Печенье
+                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6.86667L6 12L16 1" stroke="#EBE3D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                </button>
+                <button class="catalog__popup-category">Клубника</button>
+                <button class="catalog__popup-category">Боксы</button>
+            </div>
+            <button class="catalog__popup-confirm" onclick="closePopup('categories-popup')">Подтвердить</button>
+        </div>
+    </div>
+    
+    <script src="assets/js/catalog.js"></script>
 </body>
 </html>

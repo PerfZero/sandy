@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крамбл Кукис Шоколадный - Sandi</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <button class="header__burger" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Каталог</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Связаться с нами</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="header__button header__button--login">Войти</button>
+                <button class="header__button header__button--cart">
+                    <img src="/assets/img/cart.svg" alt="">
+                    <span class="header__cart-count" id="cartCount">3</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__content">
+                <button class="mobile-menu__close" id="mobileMenuClose">×</button>
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">О компании</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Каталог</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Связаться с нами</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__actions">
+                    <button class="mobile-menu__button mobile-menu__button--login">Войти</button>
+                    <button class="mobile-menu__button mobile-menu__button--cart">
+                        Корзина
+                        <span class="mobile-menu__cart-count" id="mobileCartCount">3</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <main class="product">
+        <div class="product__container">
+            <div class="product__content">
+                <div class="product__image">
+                    <div class="swiper product__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="product__price">20 000 KZT/шт.</div>
+                </div>
+                
+                <div class="product__info">
+                    <h1 class="product__title">Крамбл Кукис Шоколадный</h1>
+                    
+                    <div class="product__infos">
+                    <p class="product__description">
+                        Шоколадное крамбл-печенье — это баланс между насыщенным вкусом тёмного какао и рассыпчатой текстурой, которая мягко хрустит при каждом укусе. Идеальное сопровождение для утреннего ритуала, чашки эспрессо или тёплого молока перед сном.
+                    </p>
+                    
+                    <div class="product__ingredients">
+                        Состав: шоколад, какао, пшеничная мука, орехи, карамель, молоко
+                    </div>
+                    
+                    <div class="product__controls">
+                        <button class="product__filling-btn" id="openFillingPopup">Выбрать наполнение</button>
+                    </div>
+                    
+                    <div class="product__disclaimer">
+                        * От 10 единиц цена 15 000 за штуку
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Выбранные товары -->
+        <div class="selected-items" id="selectedItems">
+            <!-- Выбранные товары будут добавляться сюда -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <img src="assets/img/footer_logo.svg" alt="Логотип" class="footer__logo-img">
+                    </div>
+                    <div class="footer__schedule">
+                        <p class="footer__schedule-text">График работы:</p>
+                        <p class="footer__schedule-time">Пн - Пт, с 10:00 до 22:00</p>
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__address">
+                        <p class="footer__address-text">Астана. Проспект Улы Дала 45/1</p>
+                    </div>
+                    <div class="footer__languages">
+                        <a href="#" class="footer__lang">RU</a>
+                        <span class="footer__separator">|</span>
+                        <a href="#" class="footer__lang">KZ</a>
+                        <span class="footer__separator">|</span>
+                        <a href="#" class="footer__lang">EN</a>
+                    </div>
+                    <div class="footer__copyright">
+                        <p class="footer__copyright-text">© 2025 Sandi. Все права защищены</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Попап выбора наполнения -->
+    <div class="filling-popup" id="fillingPopup">
+        <div class="filling-popup__overlay"></div>
+        <div class="filling-popup__content">
+            <div class="filling-popup__header">
+                <h2 class="filling-popup__title">Наполнение бокса (до 12 штук)</h2>
+                <button class="filling-popup__close" id="closeFillingPopup">×</button>
+            </div>
+            
+            <div class="filling-popup__controls">
+                <label class="filling-popup__select-all">
+                    <input type="checkbox" id="selectAll">
+                    <span>Выбрать все</span>
+                </label>
+                <button class="filling-popup__clear"><img src="/assets/img/carts.svg" alt=""></button>
+            </div>
+
+            <div class="filling-popup__items">
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка - Малина" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Макаронс Фисташка - Малина</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">6</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">12 400 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox">
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка - Малина" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Макаронс Фисташка - Малина</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">6</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">12 400 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка - Малина" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Макаронс Фисташка - Малина</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">0</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">12 400 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filling-popup__footer">
+                <div class="filling-popup__total">
+                    <span class="filling-popup__total-price">377 200 KZT</span>
+                </div>
+                <button class="filling-popup__save-btn">Сохранить</button>
+            </div>
+
+            <div class="filling-popup__recommended">
+                <h3 class="filling-popup__recommended-title">Рекомендуем попробовать</h3>
+                <div class="catalog__products">
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Попап корзины -->
+    <div class="filling-popup" id="cartPopup">
+        <div class="filling-popup__overlay"></div>
+        <div class="filling-popup__content">
+            <div class="filling-popup__header">
+                <h2 class="filling-popup__title">Корзина</h2>
+                <button class="filling-popup__close" id="closeCartPopup">×</button>
+            </div>
+            
+            <div class="filling-popup__controls">
+                <label class="filling-popup__select-all">
+                    <input type="checkbox" id="selectAllCart">
+                    <span>Выбрать все</span>
+                </label>
+                <button class="filling-popup__clear"><img src="/assets/img/carts.svg" alt=""></button>
+            </div>
+
+            <div class="filling-popup__items" id="cartItems">
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка - Малина" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Макаронс Фисташка - Малина</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">6</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">12 400 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+                
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/chocolate-cookie.png" alt="Крамбл Кукис Шоколадный" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Крамбл Кукис Шоколадный</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">4</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">15 000 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+                
+                <div class="filling-popup__item">
+                    <label class="filling-popup__item-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="filling-popup__checkmark"></span>
+                    </label>
+                    <img src="assets/img/gift-box.png" alt="Подарочная коробка" class="filling-popup__item-image">
+                    <h3 class="filling-popup__item-title">Подарочная коробка</h3>
+                    <div class="filling-popup__item-controls">
+                        <button class="filling-popup__quantity-btn">-</button>
+                        <span class="filling-popup__quantity">2</span>
+                        <button class="filling-popup__quantity-btn">+</button>
+                    </div>
+                    <div class="filling-popup__item-price">25 000 KZT</div>
+                    <div class="filling-popup__item-more">
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                        <span class="filling-popup__dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filling-popup__footer">
+                <div class="filling-popup__total">
+                    <span class="filling-popup__total-price">0 KZT</span>
+                </div>
+                <button class="filling-popup__save-btn">Оформить заказ</button>
+            </div>
+
+            <div class="filling-popup__recommended">
+                <h3 class="filling-popup__recommended-title">Рекомендуем попробовать</h3>
+                <div class="catalog__products">
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog__product">
+                        <div class="catalog__product-badge catalog__product-badge--new">Новинка</div>
+                        <button class="catalog__product-search">
+                            <img src="assets/img/search-icon.svg" alt="Поиск">
+                        </button>
+                        <div class="catalog__product-image">
+                            <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка-Малина">
+                        </div>
+                        <h3 class="catalog__product-name">Макаронс Фисташка-Малина</h3>
+                        <div class="catalog__product-price">20 000 KZT</div>
+                        <div class="catalog__product-controls">
+                            <div class="catalog__quantity">
+                                <button class="catalog__quantity-btn">-</button>
+                                <span>99</span>
+                                <button class="catalog__quantity-btn">+</button>
+                            </div>
+                            <button class="catalog__add-btn">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.product__swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Управление попапом
+        const openBtn = document.getElementById('openFillingPopup');
+        const closeBtn = document.getElementById('closeFillingPopup');
+        const popup = document.getElementById('fillingPopup');
+        const overlay = popup.querySelector('.filling-popup__overlay');
+
+        openBtn.addEventListener('click', () => {
+            popup.classList.add('filling-popup--active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('filling-popup--active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.classList.remove('filling-popup--active');
+            document.body.style.overflow = '';
+        });
+
+        // Управление чекбоксом "Выбрать все"
+        const selectAllCheckbox = document.getElementById('selectAll');
+        const selectAllLabel = document.querySelector('.filling-popup__select-all');
+        const itemCheckboxes = document.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]');
+        
+        selectAllCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                selectAllLabel.classList.add('checked');
+                itemCheckboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+            } else {
+                selectAllLabel.classList.remove('checked');
+                itemCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+            updateTotal();
+        });
+
+        // Управление отдельными чекбоксами
+        itemCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                updateSelectAllState();
+                updateTotal();
+            });
+        });
+
+        // Управление кнопками количества
+        const quantityBtns = document.querySelectorAll('.filling-popup__quantity-btn');
+        quantityBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const quantitySpan = this.parentElement.querySelector('.filling-popup__quantity');
+                let quantity = parseInt(quantitySpan.textContent);
+                
+                if (this.textContent === '-') {
+                    if (quantity > 0) {
+                        quantity--;
+                    }
+                } else if (this.textContent === '+') {
+                    quantity++;
+                }
+                
+                quantitySpan.textContent = quantity;
+                updateTotal();
+            });
+        });
+
+        // Функция обновления состояния "Выбрать все"
+        function updateSelectAllState() {
+            const checkedCount = document.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]:checked').length;
+            const totalCount = itemCheckboxes.length;
+            
+            if (checkedCount === totalCount) {
+                selectAllCheckbox.checked = true;
+                selectAllLabel.classList.add('checked');
+            } else if (checkedCount === 0) {
+                selectAllCheckbox.checked = false;
+                selectAllLabel.classList.remove('checked');
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllLabel.classList.remove('checked');
+            }
+        }
+
+        // Функция обновления общей суммы и отображения выбранных товаров
+        function updateTotal() {
+            let total = 0;
+            const selectedItemsContainer = document.getElementById('selectedItems');
+            selectedItemsContainer.innerHTML = '';
+            
+            itemCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const item = checkbox.closest('.filling-popup__item');
+                    const quantity = parseInt(item.querySelector('.filling-popup__quantity').textContent);
+                    const priceText = item.querySelector('.filling-popup__item-price').textContent;
+                    const price = parseInt(priceText.replace(/\D/g, ''));
+                    const title = item.querySelector('.filling-popup__item-title').textContent;
+                    const image = item.querySelector('.filling-popup__item-image').src;
+                    
+                    if (quantity > 0) {
+                        total += quantity * price;
+                        
+                        // Создаем элемент выбранного товара
+                        const selectedItem = document.createElement('div');
+                        selectedItem.className = 'filling-popup__item';
+                        const totalPrice = quantity * price;
+                        selectedItem.innerHTML = `
+                            <img src="${image}" alt="${title}" class="filling-popup__item-image">
+                            <h3 class="filling-popup__item-title">${title}</h3>
+                            <div class="filling-popup__item-info">${priceText} x ${quantity} ед.</div>
+                            <div class="filling-popup__item-total">${totalPrice.toLocaleString()} KZT</div>
+                        `;
+                        selectedItemsContainer.appendChild(selectedItem);
+                    }
+                }
+            });
+            
+            const totalElement = document.querySelector('.filling-popup__total-price');
+            totalElement.textContent = total.toLocaleString() + ' KZT';
+        }
+
+
+        // Кнопка очистки
+        const clearBtn = document.querySelector('.filling-popup__clear');
+        clearBtn.addEventListener('click', function() {
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.querySelectorAll('.filling-popup__quantity').forEach(span => {
+                span.textContent = '0';
+            });
+            updateSelectAllState();
+            updateTotal();
+        });
+
+        // Кнопка сохранения
+        const saveBtn = document.querySelector('.filling-popup__save-btn');
+        saveBtn.addEventListener('click', function() {
+            const selectedItems = [];
+            
+            itemCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const item = checkbox.closest('.filling-popup__item');
+                    const name = item.querySelector('.filling-popup__item-title').textContent;
+                    const quantity = parseInt(item.querySelector('.filling-popup__quantity').textContent);
+                    const priceText = item.querySelector('.filling-popup__item-price').textContent;
+                    const price = parseInt(priceText.replace(/\D/g, ''));
+                    
+                    selectedItems.push({
+                        name: name,
+                        quantity: quantity,
+                        price: price,
+                        total: quantity * price
+                    });
+                }
+            });
+            
+            console.log('Выбранные товары:', selectedItems);
+            alert('Товары добавлены в корзину!');
+            popup.classList.remove('filling-popup--active');
+            document.body.style.overflow = '';
+        });
+
+        // Управление попапом корзины
+        const cartOpenBtn = document.getElementById('openCartPopup');
+        const cartCloseBtn = document.getElementById('closeCartPopup');
+        const cartPopup = document.getElementById('cartPopup');
+        const cartOverlay = cartPopup.querySelector('.filling-popup__overlay');
+
+        cartOpenBtn.addEventListener('click', () => {
+            updateCartDisplay();
+            cartPopup.classList.add('filling-popup--active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        cartCloseBtn.addEventListener('click', () => {
+            cartPopup.classList.remove('filling-popup--active');
+            document.body.style.overflow = '';
+        });
+
+        cartOverlay.addEventListener('click', () => {
+            cartPopup.classList.remove('filling-popup--active');
+            document.body.style.overflow = '';
+        });
+
+        // Функция обновления отображения корзины
+        function updateCartDisplay() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartTotalElement = cartPopup.querySelector('.filling-popup__total-price');
+            cartItemsContainer.innerHTML = '';
+            
+            let cartTotal = 0;
+            
+            itemCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const item = checkbox.closest('.filling-popup__item');
+                    const quantity = parseInt(item.querySelector('.filling-popup__quantity').textContent);
+                    const priceText = item.querySelector('.filling-popup__item-price').textContent;
+                    const price = parseInt(priceText.replace(/\D/g, ''));
+                    const title = item.querySelector('.filling-popup__item-title').textContent;
+                    const image = item.querySelector('.filling-popup__item-image').src;
+                    
+                    if (quantity > 0) {
+                        cartTotal += quantity * price;
+                        
+                        // Создаем элемент товара в корзине с полной структурой
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'filling-popup__item';
+                        cartItem.innerHTML = `
+                            <label class="filling-popup__item-checkbox">
+                                <input type="checkbox" checked>
+                                <span class="filling-popup__checkmark"></span>
+                            </label>
+                            <img src="${image}" alt="${title}" class="filling-popup__item-image">
+                            <h3 class="filling-popup__item-title">${title}</h3>
+                            <div class="filling-popup__item-controls">
+                                <button class="filling-popup__quantity-btn">-</button>
+                                <span class="filling-popup__quantity">${quantity}</span>
+                                <button class="filling-popup__quantity-btn">+</button>
+                            </div>
+                            <div class="filling-popup__item-price">${priceText}</div>
+                            <div class="filling-popup__item-more">
+                                <span class="filling-popup__dot"></span>
+                                <span class="filling-popup__dot"></span>
+                                <span class="filling-popup__dot"></span>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(cartItem);
+                    }
+                }
+            });
+            
+            if (cartTotalElement) {
+                cartTotalElement.textContent = cartTotal.toLocaleString() + ' KZT';
+            }
+            
+            // Переинициализируем обработчики для новых элементов
+            initCartPopup();
+        }
+
+        // Функция обновления общей суммы в корзине
+        function updateCartTotal() {
+            const cartItemCheckboxes = cartPopup.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]');
+            let total = 0;
+            cartItemCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const item = checkbox.closest('.filling-popup__item');
+                    const quantity = parseInt(item.querySelector('.filling-popup__quantity').textContent);
+                    const priceText = item.querySelector('.filling-popup__item-price').textContent;
+                    const price = parseInt(priceText.replace(/\D/g, ''));
+                    total += quantity * price;
+                }
+            });
+            
+            const totalElement = cartPopup.querySelector('.filling-popup__total-price');
+            if (totalElement) {
+                totalElement.textContent = total.toLocaleString() + ' KZT';
+            }
+        }
+
+        // Функция обновления состояния "Выбрать все" в корзине
+        function updateCartSelectAllState() {
+            const cartSelectAllCheckbox = document.getElementById('selectAllCart');
+            const selectAllLabel = cartSelectAllCheckbox.closest('.filling-popup__select-all');
+            const checkedBoxes = cartPopup.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]:checked');
+            const totalBoxes = cartPopup.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]').length;
+            
+            if (checkedBoxes.length === 0) {
+                cartSelectAllCheckbox.checked = false;
+                selectAllLabel.classList.remove('checked');
+            } else if (checkedBoxes.length === totalBoxes) {
+                cartSelectAllCheckbox.checked = true;
+                selectAllLabel.classList.add('checked');
+            } else {
+                cartSelectAllCheckbox.checked = false;
+                selectAllLabel.classList.remove('checked');
+            }
+        }
+
+        // Функционал для попапа корзины
+        function initCartPopup() {
+            const cartSelectAllCheckbox = document.getElementById('selectAllCart');
+            const cartItemCheckboxes = cartPopup.querySelectorAll('.filling-popup__item-checkbox input[type="checkbox"]');
+            const cartQuantityBtns = cartPopup.querySelectorAll('.filling-popup__quantity-btn');
+            const cartClearBtn = cartPopup.querySelector('.filling-popup__clear');
+            const cartSaveBtn = cartPopup.querySelector('.filling-popup__save-btn');
+
+            if (!cartSelectAllCheckbox || !cartItemCheckboxes.length) return;
+
+            // Обработчик для "Выбрать все" в корзине
+            cartSelectAllCheckbox.addEventListener('change', function() {
+                const isChecked = this.checked;
+                const selectAllLabel = this.closest('.filling-popup__select-all');
+                
+                if (isChecked) {
+                    selectAllLabel.classList.add('checked');
+                } else {
+                    selectAllLabel.classList.remove('checked');
+                }
+                
+                cartItemCheckboxes.forEach(checkbox => {
+                    checkbox.checked = isChecked;
+                    const label = checkbox.closest('label');
+                    if (isChecked) {
+                        label.classList.add('checked');
+                    } else {
+                        label.classList.remove('checked');
+                    }
+                });
+                updateCartTotal();
+            });
+
+            // Обработчики для чекбоксов товаров в корзине
+            cartItemCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const label = this.closest('label');
+                    if (this.checked) {
+                        label.classList.add('checked');
+                    } else {
+                        label.classList.remove('checked');
+                    }
+                    updateCartSelectAllState();
+                    updateCartTotal();
+                });
+            });
+
+            // Обработчики для кнопок количества в корзине
+            cartQuantityBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quantitySpan = this.parentElement.querySelector('.filling-popup__quantity');
+                    let quantity = parseInt(quantitySpan.textContent);
+                    
+                    // Определяем тип кнопки по позиции в контейнере
+                    const controls = this.parentElement;
+                    const buttons = controls.querySelectorAll('.filling-popup__quantity-btn');
+                    const isMinus = this === buttons[0];
+                    const isPlus = this === buttons[buttons.length - 1];
+                    
+                    if (isMinus && quantity > 0) {
+                        quantity--;
+                    } else if (isPlus) {
+                        quantity++;
+                    }
+                    
+                    quantitySpan.textContent = quantity;
+                    updateCartTotal();
+                });
+            });
+
+            // Обработчик для кнопки "Очистить" в корзине
+            if (cartClearBtn) {
+                cartClearBtn.addEventListener('click', () => {
+                    cartItemCheckboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                        const label = checkbox.closest('label');
+                        label.classList.remove('checked');
+                    });
+                    cartSelectAllCheckbox.checked = false;
+                    const selectAllLabel = cartSelectAllCheckbox.closest('.filling-popup__select-all');
+                    selectAllLabel.classList.remove('checked');
+                    updateCartTotal();
+                });
+            }
+
+            // Обработчик для кнопки "Оформить заказ" в корзине
+            if (cartSaveBtn) {
+                cartSaveBtn.addEventListener('click', () => {
+                    alert('Заказ оформлен!');
+                    cartPopup.classList.remove('filling-popup--active');
+                    document.body.style.overflow = '';
+                });
+            }
+        }
+
+        // Инициализация
+        updateTotal();
+        initCartPopup();
+        updateCartTotal();
+    </script>
+</body>
+</html>

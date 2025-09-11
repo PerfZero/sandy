@@ -10,6 +10,12 @@
 <body>
     <header class="header">
         <div class="header__container">
+            <button class="header__burger" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__item">
@@ -23,9 +29,41 @@
                     </li>
                 </ul>
             </nav>
+            
             <div class="header__actions">
                 <button class="header__button header__button--login">Войти</button>
-                <button class="header__button header__button--cart"><img src="/assets/img/cart.svg" alt=""></button>
+                <button class="header__button header__button--cart">
+                    <img src="/assets/img/cart.svg" alt="">
+                    <span class="header__cart-count" id="cartCount">3</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__content">
+                <button class="mobile-menu__close" id="mobileMenuClose">×</button>
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">О компании</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Каталог</a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#" class="mobile-menu__link">Связаться с нами</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu__actions">
+                    <button class="mobile-menu__button mobile-menu__button--login">Войти</button>
+                    <button class="mobile-menu__button mobile-menu__button--cart">
+                        Корзина
+                        <span class="mobile-menu__cart-count" id="mobileCartCount">3</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -106,6 +144,169 @@
             </div>
         </div>
     </footer>
+
+    <!-- Модальные окна авторизации -->
+    
+    <!-- Окно регистрации -->
+    <div class="auth-popup" id="registerPopup">
+        <div class="auth-popup__content">
+            <button class="auth-popup__back" onclick="showAuthPopup('loginPopup')">
+                <svg viewBox="0 0 39 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.7655 6.08509C33.96 4.18118 23.2231 2.69108 10.7185 11.9619M11.4414 1.33695C8.89081 5.22875 0.984576 15.4879 0.978359 15.6713C0.972143 15.8547 11.2419 17.9287 19.8298 21.4514" stroke="#7E5C45" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button class="auth-popup__close" onclick="closeAuthPopup('registerPopup')">×</button>
+            <h2 class="auth-popup__title">Регистрация</h2>
+            <form class="auth-popup__form">
+                <input type="text" class="auth-popup__input" placeholder="Введите имя" required>
+                <input type="text" class="auth-popup__input" placeholder="Фамилия" required>
+                <input type="tel" class="auth-popup__input" placeholder="Номер телефона" required>
+                <button type="button" class="auth-popup__button" onclick="showCodePopup('register')">Подтвердить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Окно подтверждения номера (регистрация) -->
+    <div class="auth-popup" id="registerCodePopup">
+        <div class="auth-popup__content">
+            <button class="auth-popup__back" onclick="showAuthPopup('registerPopup')">
+                <svg viewBox="0 0 39 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.7655 6.08509C33.96 4.18118 23.2231 2.69108 10.7185 11.9619M11.4414 1.33695C8.89081 5.22875 0.984576 15.4879 0.978359 15.6713C0.972143 15.8547 11.2419 17.9287 19.8298 21.4514" stroke="#7E5C45" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button class="auth-popup__close" onclick="closeAuthPopup('registerCodePopup')">×</button>
+            <h2 class="auth-popup__title">Подтвердите ваш номер</h2>
+            <p class="auth-popup__timer">Введите 6 значный код</p>
+            <form class="auth-popup__form">
+                <input type="number" class="auth-popup__input" placeholder="Введите код" maxlength="6" max="999999">
+                <button type="button" class="auth-popup__button" onclick="confirmCode('register')">Подтвердить</button>
+            </form>
+            <p class="auth-popup__timer">Отправить код повторно через <span id="registerTimer">4:36</span></p>
+        </div>
+    </div>
+
+    <!-- Окно входа -->
+    <div class="auth-popup" id="loginPopup">
+        <div class="auth-popup__content">
+            <button class="auth-popup__close" onclick="closeAuthPopup('loginPopup')">×</button>
+            <h2 class="auth-popup__title">Войти в личный кабинет</h2>
+            <form class="auth-popup__form">
+                <input type="tel" class="auth-popup__input" placeholder="Номер телефона" required>
+                <button type="button" class="auth-popup__button" onclick="showCodePopup('login')">Отправить код</button>
+                <a href="#" class="auth-popup__link" onclick="showAuthPopup('registerPopup')">Регистрация</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Окно подтверждения кода (вход) -->
+    <div class="auth-popup" id="loginCodePopup">
+        <div class="auth-popup__content">
+            <button class="auth-popup__back" onclick="showAuthPopup('loginPopup')">
+                <svg viewBox="0 0 39 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.7655 6.08509C33.96 4.18118 23.2231 2.69108 10.7185 11.9619M11.4414 1.33695C8.89081 5.22875 0.984576 15.4879 0.978359 15.6713C0.972143 15.8547 11.2419 17.9287 19.8298 21.4514" stroke="#7E5C45" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button class="auth-popup__close" onclick="closeAuthPopup('loginCodePopup')">×</button>
+            <h2 class="auth-popup__title">Введите код из SMS</h2>
+            <p class="auth-popup__timer">Введите 6 значный код</p>
+            <form class="auth-popup__form">
+                <input type="number" class="auth-popup__input" placeholder="Введите код" maxlength="6" max="999999">
+                <button type="button" class="auth-popup__button" onclick="confirmCode('login')">Подтвердить</button>
+            </form>
+            <p class="auth-popup__timer">Отправить код повторно через <span id="loginTimer">4:36</span></p>
+        </div>
+    </div>
+
+    <!-- Окно с ошибкой -->
+    <div class="auth-popup" id="errorCodePopup">
+        <div class="auth-popup__content">
+            <button class="auth-popup__back" onclick="showAuthPopup('loginPopup')">
+                <svg viewBox="0 0 39 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.7655 6.08509C33.96 4.18118 23.2231 2.69108 10.7185 11.9619M11.4414 1.33695C8.89081 5.22875 0.984576 15.4879 0.978359 15.6713C0.972143 15.8547 11.2419 17.9287 19.8298 21.4514" stroke="#7E5C45" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button class="auth-popup__close" onclick="closeAuthPopup('errorCodePopup')">×</button>
+            <h2 class="auth-popup__title">Введите код из SMS</h2>
+            <p class="auth-popup__timer">Введите 6 значный код</p>
+            <form class="auth-popup__form">
+                <input type="number" class="auth-popup__input" placeholder="Введите код" maxlength="6" max="999999">
+                <div class="auth-popup__error">Вы ввели неверный код. Осталось 2 попытки</div>
+                <button type="button" class="auth-popup__button" onclick="confirmCode('error')">Подтвердить</button>
+            </form>
+            <p class="auth-popup__timer">Отправить код повторно через <span id="errorTimer">4:36</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Функции для работы с модальными окнами авторизации
+        function showAuthPopup(popupId) {
+            console.log('Открываем попап:', popupId);
+            // Закрываем все попапы
+            document.querySelectorAll('.auth-popup').forEach(popup => {
+                popup.classList.remove('auth-popup--active');
+            });
+            // Открываем нужный попап
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.classList.add('auth-popup--active');
+                console.log('Попап открыт');
+            } else {
+                console.error('Попап не найден:', popupId);
+            }
+        }
+
+        function closeAuthPopup(popupId) {
+            document.getElementById(popupId).classList.remove('auth-popup--active');
+        }
+
+        function showCodePopup(type) {
+            if (type === 'register') {
+                closeAuthPopup('registerPopup');
+                showAuthPopup('registerCodePopup');
+            } else if (type === 'login') {
+                closeAuthPopup('loginPopup');
+                showAuthPopup('loginCodePopup');
+            }
+        }
+
+        function confirmCode(type) {
+            if (type === 'error') {
+                // Показываем попап с ошибкой
+                closeAuthPopup('loginCodePopup');
+                showAuthPopup('errorCodePopup');
+            } else {
+                // Успешная авторизация - закрываем все попапы
+                document.querySelectorAll('.auth-popup').forEach(popup => {
+                    popup.classList.remove('auth-popup--active');
+                });
+                // Здесь можно добавить логику успешной авторизации
+                alert('Успешная авторизация!');
+            }
+        }
+
+        // Обработчик для кнопки "Войти" в хедере
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM загружен');
+            const loginButtons = document.querySelectorAll('.header__button--login, .mobile-menu__button--login');
+            console.log('Найдено кнопок входа:', loginButtons.length);
+            loginButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Клик по кнопке входа');
+                    showAuthPopup('loginPopup');
+                });
+            });
+        });
+
+        // Закрытие попапа при клике на фон
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('auth-popup')) {
+                    e.target.classList.remove('auth-popup--active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
