@@ -6,6 +6,7 @@
     <title>Мой кабинет - Sandi</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -70,14 +71,13 @@
     
     <main class="account">
         <div class="account__container">
-            <div class="account__header">
+            <div class="account__header" data-aos="fade-down" data-aos-delay="200">
                 <h1 class="account__title">Мой кабинет</h1>
                 <div class="account__actions">
-                    <a href="#" class="account__action">
+                    <button class="account__action" id="editProfileBtn">
                         Редактировать профиль
                         <img src="assets/img/edit-icon.svg" alt="Редактировать" class="account__action-icon">
-
-                    </a>
+                    </button>
                     <a href="#" class="account__action">
                         Выйти
                         <img src="assets/img/logout-icon.svg" alt="Выйти" class="account__action-icon">
@@ -86,23 +86,45 @@
                 </div>
             </div>
             
-            <div class="account__profile">
+            <div class="account__profile" data-aos="fade-up" data-aos-delay="400">
                 <div class="account__field">
-                    <input type="text" value="Виктор" class="account__input" readonly>
+                    <input type="text" value="Виктор" class="account__input" id="nameInput" readonly>
                 </div>
                 <div class="account__field">
-                    <input type="text" value="+ 123 456 789 00 12" class="account__input" readonly>
+                    <input type="text" value="+ 123 456 789 00 12" class="account__input" id="phoneInput" readonly>
                 </div>
                 <div class="account__field">
-                    <input type="text" value="Макаронс" class="account__input" readonly>
+                    <input type="text" value="Макаронс" class="account__input" id="favoriteInput" readonly>
                 </div>
-                <div class="account__field">
-                    <input type="text" value="Астана. Проспект Улы Дала 45/1" class="account__input account__input--address" readonly>
-                    <img src="assets/img/location-icon.svg" alt="Адрес" class="account__location-icon">
+                <div class="account__field account__field--dropdown">
+                    <div class="account__dropdown" id="addressDropdown">
+                        <div class="account__dropdown-selected" id="dropdownSelected">
+                            <span>Астана. Проспект Улы Дала 45/1</span>
+                            <img src="assets/img/location-icon.svg" alt="Адрес" class="account__location-icon">
+                        </div>
+                        <div class="account__dropdown-options" id="dropdownOptions">
+                            <div class="account__dropdown-option" data-value="Астана. Проспект Улы Дала 45/1">
+                                <span>Астана. Проспект Улы Дала 45/1</span>
+                                <img src="assets/img/location-icon.svg" alt="Адрес" class="account__location-icon">
+                            </div>
+                            <div class="account__dropdown-option" data-value="Астана. Проспект Улы Дала 45/2">
+                                <span>Астана. Проспект Улы Дала 45/2</span>
+                                <button class="account__delete-address" onclick="deleteAddress(this)">×</button>
+                            </div>
+                            <div class="account__dropdown-option" data-value="Астана. Проспект Улы Дала 45/3">
+                                <span>Астана. Проспект Улы Дала 45/3</span>
+                                <button class="account__delete-address" onclick="deleteAddress(this)">×</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account__profile-actions" id="profileActions" style="display: none;">
+                    <button class="account__save-btn" id="saveProfileBtn">Сохранить</button>
+                    <button class="account__cancel-btn" id="cancelProfileBtn">Отменить</button>
                 </div>
             </div>
             
-            <section class="last-order">
+            <section class="last-order" data-aos="fade-right" data-aos-delay="600">
                 <h2 class="last-order__title">Последний заказ</h2>
                 <div class="last-order__card">
                     <div class="last_order">
@@ -137,7 +159,7 @@
                 </div>
             </section>
             
-            <section class="order-history">
+            <section class="order-history" data-aos="fade-left" data-aos-delay="800">
                 <h2 class="order-history__title">История заказов</h2>
                 <div class="order-history__cards">
                     <div class="order-history__card">
@@ -178,28 +200,28 @@
                 <a href="#" class="order-history__expand">Развернуть всю историю заказов...</a>
             </section>
             
-            <section class="coupons">
+            <section class="coupons" data-aos="fade-up" data-aos-delay="1000">
                 <h2 class="coupons__title">Доступные купоны</h2>
                 <div class="coupons__grid">
-                    <div class="coupons__card">
+                    <div class="coupons__card" data-aos="zoom-in" data-aos-delay="1200">
                         <h3 class="coupons__card-title">Постоянный покупатель</h3>
                         <div class="coupons__discount">Скидка -10% на весь чек</div>
                         <div class="coupons__validity">Действителен: бесконечно</div>
                         <button class="coupons__button coupons__button--active">Активен</button>
                     </div>
-                    <div class="coupons__card">
+                    <div class="coupons__card" data-aos="zoom-in" data-aos-delay="1400">
                         <h3 class="coupons__card-title">Оптовые цены</h3>
                         <div class="coupons__discount">Скидка -30% на весь чек</div>
                         <div class="coupons__validity">Действителен: от 30 товаров</div>
                         <button class="coupons__button">Активировать</button>
                     </div>
-                    <div class="coupons__card">
+                    <div class="coupons__card" data-aos="zoom-in" data-aos-delay="1600">
                         <h3 class="coupons__card-title">День рождение</h3>
                         <div class="coupons__discount">Скидка -15% на весь чек</div>
                         <div class="coupons__validity">Действителен: единоразово</div>
                         <button class="coupons__button">Активировать</button>
                     </div>
-                    <div class="coupons__card">
+                    <div class="coupons__card" data-aos="zoom-in" data-aos-delay="1800">
                         <h3 class="coupons__card-title">Постоянный оптовик</h3>
                         <div class="coupons__discount">Скидка -40% на весь чек</div>
                         <div class="coupons__validity">Действителен: от 50 боксов с макаронсами</div>
@@ -240,6 +262,174 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Попап корзины -->
+    <div class="filling-popup" id="cartPopup">
+        <div class="filling-popup__overlay"></div>
+        <div class="filling-popup__content">
+            <div class="filling-popup__header">
+                <h2 class="filling-popup__title">Корзина</h2>
+                <button class="filling-popup__close" id="closeCartPopup">×</button>
+            </div>
+            
+            <div class="filling-popup__controls">
+                <label class="filling-popup__select-all">
+                    <input type="checkbox" id="selectAllCart">
+                    <span>Выбрать все</span>
+                </label>
+                <button class="filling-popup__clear"><img src="/assets/img/carts.svg" alt=""></button>
+            </div>
+
+            <div class="filling-popup__items" id="cartItems">
+                <!-- Товары будут добавляться динамически -->
+            </div>
+
+            <div class="filling-popup__footer">
+                <div class="filling-popup__total">
+                    <span class="filling-popup__total-price">0 KZT</span>
+                </div>
+                <button class="filling-popup__save-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        let originalValues = {};
+
+        function deleteAddress(button) {
+            const option = button.closest('.account__dropdown-option');
+            option.remove();
+        }
+
+
+        document.getElementById('addressDropdown').addEventListener('click', function() {
+            const dropdown = document.getElementById('addressDropdown');
+            const options = document.getElementById('dropdownOptions');
+            
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+                options.style.display = 'none';
+            } else {
+                dropdown.classList.add('active');
+                options.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('addressDropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+                document.getElementById('dropdownOptions').style.display = 'none';
+            }
+        });
+
+        document.getElementById('dropdownOptions').addEventListener('click', function(e) {
+            const option = e.target.closest('.account__dropdown-option');
+            if (!option) return;
+            
+            if (e.target.classList.contains('account__delete-address')) {
+                return;
+            }
+            
+            const value = option.getAttribute('data-value');
+            const selectedSpan = document.querySelector('#dropdownSelected span');
+            const selectedIcon = document.querySelector('#dropdownSelected .account__location-icon');
+            
+            selectedSpan.textContent = value;
+            
+            const optionIcon = option.querySelector('.account__location-icon');
+            if (optionIcon) {
+                selectedIcon.style.display = 'block';
+            } else {
+                selectedIcon.style.display = 'none';
+            }
+            
+            document.getElementById('addressDropdown').classList.remove('active');
+            document.getElementById('dropdownOptions').style.display = 'none';
+        });
+
+        document.getElementById('editProfileBtn').addEventListener('click', function() {
+            const inputs = ['nameInput', 'phoneInput', 'favoriteInput'];
+            const addressInputs = document.querySelectorAll('.account__input--address');
+            const profileActions = document.getElementById('profileActions');
+            const editBtn = document.getElementById('editProfileBtn');
+            
+            inputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                originalValues[inputId] = input.value;
+                input.removeAttribute('readonly');
+                input.style.borderColor = '#ff6565';
+                input.style.backgroundColor = '#fff';
+            });
+
+            addressInputs.forEach(input => {
+                originalValues[input.value] = input.value;
+                input.removeAttribute('readonly');
+                input.style.borderColor = '#ff6565';
+                input.style.backgroundColor = '#fff';
+            });
+            
+            profileActions.style.display = 'flex';
+            editBtn.style.display = 'none';
+        });
+
+        document.getElementById('saveProfileBtn').addEventListener('click', function() {
+            const inputs = ['nameInput', 'phoneInput', 'favoriteInput'];
+            const addressInputs = document.querySelectorAll('.account__input--address');
+            const profileActions = document.getElementById('profileActions');
+            const editBtn = document.getElementById('editProfileBtn');
+            
+            inputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                input.setAttribute('readonly', 'readonly');
+                input.style.borderColor = '';
+                input.style.backgroundColor = '';
+            });
+
+            addressInputs.forEach(input => {
+                input.setAttribute('readonly', 'readonly');
+                input.style.borderColor = '';
+                input.style.backgroundColor = '';
+            });
+            
+            profileActions.style.display = 'none';
+            editBtn.style.display = 'flex';
+            
+            alert('Профиль успешно сохранен!');
+        });
+
+        document.getElementById('cancelProfileBtn').addEventListener('click', function() {
+            const inputs = ['nameInput', 'phoneInput', 'favoriteInput'];
+            const addressInputs = document.querySelectorAll('.account__input--address');
+            const profileActions = document.getElementById('profileActions');
+            const editBtn = document.getElementById('editProfileBtn');
+            
+            inputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                input.value = originalValues[inputId];
+                input.setAttribute('readonly', 'readonly');
+                input.style.borderColor = '';
+                input.style.backgroundColor = '';
+            });
+
+            addressInputs.forEach(input => {
+                input.setAttribute('readonly', 'readonly');
+                input.style.borderColor = '';
+                input.style.backgroundColor = '';
+            });
+            
+            profileActions.style.display = 'none';
+            editBtn.style.display = 'flex';
+        });
+    </script>
 </body>
 </html>

@@ -46,6 +46,158 @@
   font-display: swap;
 }
 
+.account__profile-actions {
+  display: flex;
+  gap: 15px;
+
+}
+
+.account__save-btn,
+.account__cancel-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Calibri", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.account__save-btn {
+  background: radial-gradient(50% 50% at 50% 50%, #ff6565 8.65%, #fa7070 100%);
+  color: #ebe3d0;
+}
+
+.account__save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 101, 101, 0.3);
+}
+
+.account__cancel-btn {
+  background: #7e5c45;
+  color: #ebe3d0;
+}
+
+.account__cancel-btn:hover {
+  background: #6b4f3a;
+  transform: translateY(-2px);
+}
+
+.account__addresses {
+  margin-bottom: 15px;
+}
+
+.account__field--address {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.account__delete-address {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff6565;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.account__delete-address:hover {
+  background: #e55555;
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+.account__field--dropdown {
+  position: relative;
+}
+
+.account__dropdown {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border: 2px dashed #7e5c45;
+  border-radius: 16px;
+  background-color: transparent;
+  font-family: "Calibri", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #7e5c45;
+  cursor: pointer;
+}
+
+.account__dropdown:hover {
+  border-color: #ff6565;
+}
+
+.account__dropdown-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Calibri", Arial, sans-serif;
+  font-size: 24px;
+  color: #7e5c45;
+}
+
+.account__dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #FFFAF4   ;
+  border: 2px dashed #7e5c45;  border-top: none;
+  border-radius: 0 0 8px 8px;
+  display: none;
+  z-index: 1000;
+  max-height: 200px;
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.account__dropdown.active .account__dropdown-options {
+  display: block;
+}
+
+.account__profile{
+    position: relative;
+    z-index: 99;
+}
+
+.account__dropdown.active{
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
+}
+
+.account__dropdown-option {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  background: #FFFAF4   ;
+  justify-content: space-between;
+  font-family: "Calibri", Arial, sans-serif;
+  font-size: 24px;
+  color: #7e5c45;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+
+.account__dropdown-option:not(:last-child) {
+  border-bottom: 1px solid #ebe3d0;
+}
+
 body {
   font-family: "Calibri", Arial, sans-serif;
 }

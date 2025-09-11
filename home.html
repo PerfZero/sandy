@@ -6,6 +6,7 @@
     <title>Сайт</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -71,12 +72,12 @@
     <main class="main">
         <div class="main__container">
             <div class="main__content">
-                <div class="main__logo">
+                <div class="main__logo" data-aos="fade-down" data-aos-delay="200">
                     <img src="assets/img/logo.svg" alt="Логотип" class="main__logo-img">
                 </div>
                 <button class="main__button">Перейти в каталог</button>
            
-                <div class="main__arrow">
+                <div class="main__arrow" data-aos="fade-up" data-aos-delay="600">
                     <img src="assets/img/arrow.svg" alt="Стрелка вниз" class="main__arrow-img">
                 </div>
             </div>
@@ -86,11 +87,11 @@
     <section class="about">
         <div class="about__container">
             <div class="about__content">
-                <div class="about__text">
+                <div class="about__text" data-aos="fade-right" data-aos-delay="200">
                     <h2 class="about__title">Sandi это качество</h2>
                     <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                 </div>
-                <div class="about__image">
+                <div class="about__image" data-aos="fade-left" data-aos-delay="400">
                     <img src="assets/img/about-image.jpg" alt="О компании" class="about__img">
                 </div>
             </div>
@@ -100,15 +101,15 @@
     <section class="emotions">
         <div class="emotions__container">
             <div class="emotions__content">
-                <div class="emotions__image">
+                <div class="emotions__image" data-aos="fade-right" data-aos-delay="200">
                     <img src="assets/img/emotions-image.png" alt="Эмоции" class="emotions__img">
                 </div>
-                <div class="emotions__text">
+                <div class="emotions__text" data-aos="fade-left" data-aos-delay="400">
                     <h2 class="emotions__title">Мы дарим эмоции</h2>
                     <p class="emotions__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                 </div>
             </div>
-            <div class="emotions__button-wrapper">
+            <div class="emotions__button-wrapper" data-aos="fade-up" data-aos-delay="600">
                 <button class=" main__button">Посмотреть вкусы</button>
             </div>
         </div>
@@ -117,7 +118,7 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__content">
-                <div class="footer__left">
+                <div class="footer__left" data-aos="fade-up" data-aos-delay="200">
                     <div class="footer__logo">
                         <img src="assets/img/footer_logo.svg" alt="Логотип" class="footer__logo-img">
                     </div>
@@ -126,7 +127,7 @@
                         <p class="footer__schedule-time">Пн - Пт, с 10:00 до 22:00</p>
                     </div>
                 </div>
-                <div class="footer__right">
+                <div class="footer__right" data-aos="fade-up" data-aos-delay="400">
                     <div class="footer__address">
                         <p class="footer__address-text">Астана. Проспект Улы Дала 45/1</p>
                     </div>
@@ -312,9 +313,17 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/home.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
 
