@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -73,7 +74,7 @@
     <main class="product">
         <div class="product__container">
             <div class="product__content">
-                <div class="product__image">
+                <div class="product__image" data-aos="fade-right" data-aos-delay="200">
                     <div class="swiper product__swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -91,7 +92,7 @@
                     <div class="product__price">20 000 KZT/шт.</div>
                 </div>
                 
-                <div class="product__info">
+                <div class="product__info" data-aos="fade-left" data-aos-delay="400">
                     <h1 class="product__title">Крамбл Кукис Шоколадный</h1>
                     
                     <div class="product__infos">
@@ -105,9 +106,9 @@
                     
                     <div class="product__controls">
                         <div class="product__quantity">
-                            <button class="product__quantity-btn">-</button>
-                            <span>99</span>
-                            <button class="product__quantity-btn">+</button>
+                            <button class="product__quantity-btn" id="decreaseBtn">-</button>
+                            <span id="quantityValue">1</span>
+                            <button class="product__quantity-btn" id="increaseBtn">+</button>
                         </div>
                         <button class="product__add-btn">Добавить в корзину</button>
                     </div>
@@ -124,7 +125,7 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__content">
-                <div class="footer__left">
+                <div class="footer__left" data-aos="fade-up" data-aos-delay="200">
                     <div class="footer__logo">
                         <img src="assets/img/footer_logo.svg" alt="Логотип" class="footer__logo-img">
                     </div>
@@ -133,7 +134,7 @@
                         <p class="footer__schedule-time">Пн - Пт, с 10:00 до 22:00</p>
                     </div>
                 </div>
-                <div class="footer__right">
+                <div class="footer__right" data-aos="fade-up" data-aos-delay="400">
                     <div class="footer__address">
                         <p class="footer__address-text">Астана. Проспект Улы Дала 45/1</p>
                     </div>
@@ -197,7 +198,32 @@
         </div>
     </div>
     
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        let quantity = 1;
+        const quantityValue = document.getElementById('quantityValue');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        const increaseBtn = document.getElementById('increaseBtn');
+
+        decreaseBtn.addEventListener('click', function() {
+            if (quantity > 1) {
+                quantity--;
+                quantityValue.textContent = quantity;
+            }
+        });
+
+        increaseBtn.addEventListener('click', function() {
+            quantity++;
+            quantityValue.textContent = quantity;
+        });
+    </script>
 </body>
 </html>

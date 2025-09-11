@@ -6,6 +6,7 @@
     <title>Каталог - Sandi</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -71,12 +72,12 @@
     <section class="catalog__banner">
         <div class="catalog__banner-container">
             <div class="catalog__banner-content">
-                <div class="catalog__banner-text">
+                <div class="catalog__banner-text" data-aos="fade-right" data-aos-delay="200">
                     <h2 class="catalog__banner-title">Подари близкому настроение на весь день</h2>
                     <p class="catalog__banner-description">Вы можете заказать десерты в красивой подарочной упаковке</p>
                     <button class="catalog__banner-button">Посмотреть боксы</button>
                 </div>
-                <div class="catalog__banner-image">
+                <div class="catalog__banner-image" data-aos="fade-left" data-aos-delay="400">
                     <img src="assets/img/gift-box.png" alt="Подарочная коробка" class="catalog__banner-img">
                 </div>
                 <div class="catalog__banner-pagination">
@@ -92,7 +93,7 @@
     <main class="catalog">
         <div class="catalog__container">
             <div class="catalog__content">
-                <aside class="catalog__sidebar">
+                <aside class="catalog__sidebar" data-aos="fade-right" data-aos-delay="200">
                     <div class="catalog__logo">
                         <h1 class="catalog__logo-text"><img src="/assets/img/footer_logo.svg" alt=""></h1>
                     </div>
@@ -136,7 +137,7 @@
                     </div>
                     
                     <!-- Десктопные фильтры -->
-                    <div class="catalog__filters">
+                    <div class="catalog__filters" data-aos="fade-down" data-aos-delay="300">
                         <button class="catalog__filter">Рожок</button>
                         <button class="catalog__filter catalog__filter--active">Новинки</button>
                         <button class="catalog__filter">Халяль</button>
@@ -145,7 +146,7 @@
                         <button class="catalog__filter catalog__filter--active">Поштучно</button>
                     </div>
                     
-                    <div class="catalog__products">
+                    <div class="catalog__products" data-aos="fade-up" data-aos-delay="200">
                         <div class="catalog__product">
                             <div class="catalog__product-badge catalog__product-badge--popular">Популярное</div>
                             <button class="catalog__product-search">
@@ -436,8 +437,16 @@
         </div>
     </div>
     
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/catalog.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>

@@ -3592,6 +3592,9 @@ height: 64px;
   margin-top: 10px;
 }
 
+.catalog__filters-mobile{
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
   .checkout__item,
@@ -3786,6 +3789,8 @@ height: 64px;
   .account__title{
     font-size: 32px;
   }
+
+
 
   .account__profile{
     grid-template-columns: 1fr;

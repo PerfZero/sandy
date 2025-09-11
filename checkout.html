@@ -6,6 +6,7 @@
     <title>Оформление заказа</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=aa9feae8-022d-44d2-acb1-8cc0198f451d&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
@@ -71,11 +72,11 @@
 
     <main class="checkout">
         <div class="checkout__container">
-            <h1 class="checkout__title">Оформление заказа</h1>
-            <a href="#" class="checkout__edit-link">Редактировать заказ</a>
+            <h1 class="checkout__title" data-aos="fade-down" data-aos-delay="200">Оформление заказа</h1>
+            <a href="#" class="checkout__edit-link" data-aos="fade-down" data-aos-delay="300">Редактировать заказ</a>
 
             <!-- Товары в заказе -->
-            <div class="checkout__items">
+            <div class="checkout__items" data-aos="fade-up" data-aos-delay="400">
                 <div class="checkout__item">
                     <img src="assets/img/macaron-1.png" alt="Макаронс Фисташка - Малина" class="checkout__item-image">
                     <h3 class="checkout__item-title">Макаронс Фисташка - Малина</h3>
@@ -98,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="checkout__promo">
+            <div class="checkout__promo" data-aos="fade-up" data-aos-delay="500">
                 <a href="#" class="checkout__promo-link" id="openPromoPopup">Промокод +</a>
                 <div class="checkout__total">
                     <span class="checkout__total-text">К оплате:</span>
@@ -107,7 +108,7 @@
             </div>
 
             <!-- Доставка -->
-            <div class="checkout__section">
+            <div class="checkout__section" data-aos="fade-right" data-aos-delay="600">
                 <h2 class="checkout__section-title">Доставка</h2>
                 
                 <div class="checkout__option">
@@ -149,7 +150,7 @@
             </div>
 
             <!-- Оплата -->
-            <div class="checkout__section">
+            <div class="checkout__section" data-aos="fade-left" data-aos-delay="700">
                 <h2 class="checkout__section-title">Оплата</h2>
                 
                 <div class="checkout__option">
@@ -211,7 +212,7 @@
             </div>
 
             <!-- Комментарий к заказу -->
-            <div class="checkout__section">
+            <div class="checkout__section" data-aos="fade-up" data-aos-delay="800">
                 <h2 class="checkout__section-title">Комментарий к заказу</h2>
                 
                 <div class="checkout__comment-buttons">
@@ -224,7 +225,7 @@
             </div>
 
             <!-- Получатель -->
-            <div class="checkout__section">
+            <div class="checkout__section" data-aos="fade-up" data-aos-delay="900">
                 <h2 class="checkout__section-title">Получатель</h2>
                 
                 <div class="checkout__recipient-options">
@@ -261,7 +262,7 @@
             </div>
 
             <!-- Кнопка подтверждения -->
-            <button class="checkout__confirm-btn">Заказ подтверждаю</button>
+            <button class="checkout__confirm-btn" data-aos="zoom-in" data-aos-delay="1000">Заказ подтверждаю</button>
         </div>
     </main>
 
@@ -325,7 +326,15 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
     <script src="assets/js/checkout.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
